@@ -1,15 +1,12 @@
 import "./styled.scss";
 
 type detailsCardProps = {
-  data: {
-    icon: any;
-    title: any;
-    count: any;
-  };
+  icon: any;
+  title: string;
+  count: string | number;
 };
 
-function DetailsCard({ data }: detailsCardProps) {
-  const { icon, title, count } = data;
+function DetailsCard({ icon, title, count }: detailsCardProps) {
   return (
     <div className="details-card">
       <img className="details-card__icon" src={icon} alt="icon" />
