@@ -3,12 +3,27 @@ import "./styled.scss";
 import { Logo } from "src/common/logo";
 import Svgs from "src/assets/svgs";
 import SidebarItem from "src/common/sidebar-item";
+import { AuthenticateAction } from "src/redux/actions";
+import { useDispatch } from "react-redux";
 import CategoryHeader from "src/common/sidebar/category-header";
-import { SidebarData, homeRouteData } from "src/common/sidebar/data";
+import { SidebarData } from "src/common/sidebar/data";
 import SearchBar from "src/common/search-bar";
-const { CompanyLogo, backArrow } = Svgs;
+import NormalItem from "src/common/sidebar-item/normal";
+const {
+  CompanyLogo,
+  backArrow,
+  dashboardHomeInactive,
+  guarantorInactive,
+  sackInactive,
+  logoutIcon,
+} = Svgs;
 
 function MobileSidebar({ open, onCloseIconClick }) {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(AuthenticateAction.logout());
+  };
   return (
     <div
       className="mobile-sidebar-cover"
@@ -41,11 +56,32 @@ function MobileSidebar({ open, onCloseIconClick }) {
           <div className="mobile-sidebar__searchbar-wrap">
             <SearchBar />
           </div>
-          <SidebarItem data={homeRouteData} />
+          <NormalItem
+            icon={dashboardHomeInactive}
+            specialClassName="logout"
+            name="Dashboard"
+          />
           <div className="partition">Customers</div>
           {SidebarData.map((data, index) => {
             return <SidebarItem data={data} key={index} />;
           })}
+          <NormalItem
+            icon={guarantorInactive}
+            specialClassName="logout"
+            name="Guarantors"
+          />
+          <NormalItem
+            icon={sackInactive}
+            specialClassName="logout"
+            name="Loans"
+          />
+          <div className="horizontal-partition"></div>
+          <NormalItem
+            onClick={handleLogout}
+            icon={logoutIcon}
+            specialClassName="logout"
+            name="Logout"
+          />
         </div>
       </div>
     </div>

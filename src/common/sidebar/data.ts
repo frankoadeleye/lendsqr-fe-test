@@ -1,14 +1,5 @@
 import Svgs from "src/assets/svgs";
-const {
-  usersIconActive,
-  usersIconInactive,
-  guarantorActive,
-  guarantorInactive,
-  sackActive,
-  sackInactive,
-  dashboardHomeInactive,
-  dashboardHomeActive,
-} = Svgs;
+const { usersIconActive, usersIconInactive } = Svgs;
 
 const SidebarData = [
   {
@@ -17,26 +8,6 @@ const SidebarData = [
     inactiveIcon: usersIconInactive,
     activeIcon: usersIconActive,
   },
-  {
-    name: "Guarantors",
-    route: "/guarantors",
-    inactiveIcon: guarantorInactive,
-    activeIcon: guarantorActive,
-  },
-
-  {
-    name: "Loans",
-    route: "/loans",
-    inactiveIcon: sackInactive,
-    activeIcon: sackActive,
-  },
 ];
 
-const homeRouteData = {
-  name: "Dashboard",
-  route: "/home",
-  inactiveIcon: dashboardHomeInactive,
-  activeIcon: dashboardHomeActive,
-};
-
-export { SidebarData, homeRouteData };
+export { SidebarData };
