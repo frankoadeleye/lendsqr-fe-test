@@ -9,6 +9,7 @@ import userStatuses from "./data";
 import { useNavigate } from "react-router-dom";
 import Pagination from "src/common/pagination";
 import getTopMargin from "src/utils/getTopMargin";
+import FilterDropDown from "src/common/select-dropdown";
 
 const {
   filterIcon,
@@ -27,6 +28,7 @@ function ScrollToTop() {
 
 function UsersTable() {
   const [showMoreDetails, setShowMoreDetails] = useState(false);
+  const [showDropdown, setShowDropDown] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentSelection, setCurrentSelection] = useState(null);
 
@@ -38,6 +40,8 @@ function UsersTable() {
   let navigate = useNavigate();
 
   const ref = useRef(null);
+
+  const dropdownRef = useRef(null);
 
   interface RootState {
     allUsers: any;
@@ -70,6 +74,18 @@ function UsersTable() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleDropdownClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropDown(false);
+      }
+    };
+    document.addEventListener("click", handleDropdownClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleDropdownClickOutside, true);
+    };
+  }, []);
+
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
@@ -81,6 +97,10 @@ function UsersTable() {
     setCurrentSelection(Number(userId));
   };
 
+  const handleShowDropDown = () => {
+    setShowDropDown(true);
+  };
+
   useEffect(() => {
     if (currentSelection) {
       setCurrentSelection(currentSelection);
@@ -89,15 +109,17 @@ function UsersTable() {
   }, [currentSelection]);
 
   let topMargin =
-    460 + (10 * Number(`${getTopMargin(currentSelection)}0`)) / 1.75;
+    30 + (10 * Number(`${getTopMargin(currentSelection)}0`)) / 1.9;
 
   return (
     <>
       <div className="users-table">
+        <FilterDropDown showDropdown={showDropdown} dropdownRef={dropdownRef} />
         <div className="users-table__rows-wrap">
           <div className="tab-view-row header">
             <div>
-              ORGANIZATION <img src={filterIcon} alt="" />
+              ORGANIZATION{" "}
+              <img src={filterIcon} onClick={handleShowDropDown} alt="" />
             </div>
             <div>
               USERNAME <img src={filterIcon} alt="" />
@@ -150,6 +172,7 @@ function UsersTable() {
                         display: showMoreDetails ? "flex" : "none",
                         top: topMargin,
                         position: "absolute",
+                        right: "10px",
                       }}
                       key={index + allUsers.length}>
                       <div

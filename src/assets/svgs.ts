@@ -27,6 +27,7 @@ import guarantorInactive from "src/assets/svgs/guarantors.svg";
 import sackActive from "src/assets/svgs/sack-active.svg";
 import sackInactive from "src/assets/svgs/sack-inactive.svg";
 import AvatarIcon from "src/assets/svgs/avatar.svg";
+import dateIcon from "src/assets/svgs/date-icon.svg";
 
 import categoryDropdownIcon from "src/assets/svgs/category-dropdown-icon.svg";
 import backArrow from "src/assets/svgs/back-arrow.svg";
@@ -35,6 +36,7 @@ import logoutIcon from "src/assets/svgs/logout-icon.svg";
 
 const Svgs = {
   CompanyLogo,
+  dateIcon,
   eyeIcon,
   userPlus,
   starFilled,
