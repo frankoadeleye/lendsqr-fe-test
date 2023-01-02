@@ -1,0 +1,33 @@
+.avatar-block {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #213f7d;
+  }
+
+  &__icon {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14.34px;
+    height: 13.15px;
+    object-fit: contain;
+  }
+}

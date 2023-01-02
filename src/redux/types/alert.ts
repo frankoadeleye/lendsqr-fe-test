@@ -1,0 +1,8 @@
+const ALERT = {
+  CLEAR: "ALERT_CLEAR",
+  SUCCESS: "ALERT_SUCCESS",
+  FAILURE: "ALERT_FAILURE",
+  INFO: "ALERT_INFO",
+};
+
+export { ALERT };

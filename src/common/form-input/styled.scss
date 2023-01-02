@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+.input-cover {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  position: relative;
+  padding-bottom: 16px;
+
+  input {
+    outline-style: none;
+    margin: 4px auto;
+    padding: 0px 12px;
+    width: 100%;
+    color: #213f7d;
+    font-size: 14px;
+    height: 50px;
+    background: #ffffff;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 5px;
+
+    &::placeholder {
+      padding-left: 0px;
+      color: #545f7d;
+      font-family: inherit;
+      font-size: 14px;
+      font-family: "Work Sans", sans-serif !important;
+    }
+  }
+
+  .error {
+    color: red;
+    position: absolute;
+    bottom: 0px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+}

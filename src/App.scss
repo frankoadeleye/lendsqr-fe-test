@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a,
+a:link,
+ul,
+li {
+  text-decoration: none;
+  &:focus {
+    text-decoration: none !important;
+  }
+}
+.nav-link {
+  text-decoration: none;
+}
+
+p,
+header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  border-radius: 8px;
+  outline-style: none;
+  border-width: 1px;
+}
+
+input:focus {
+  outline-style: none;
+}
+
+.nav-link {
+  font-size: 14px;
+}
+
+header {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1250px) {
+}

@@ -1,0 +1,35 @@
+.details-card {
+  min-width: 200px;
+  flex: 1 1 0;
+  height: 160px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #545f7d;
+  }
+
+  &__count {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #213f7d;
+  }
+}

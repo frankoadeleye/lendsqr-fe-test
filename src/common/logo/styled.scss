@@ -1,0 +1,14 @@
+.logo-nav-link {
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    border-color: none !important;
+  }
+
+  .img {
+    width: 178.6px;
+    height: 40px;
+  }
+}

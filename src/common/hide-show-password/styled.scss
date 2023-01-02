@@ -1,0 +1,16 @@
+.hide-show {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 30%;
+
+  &__icon {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #39cdcc;
+  }
+}
