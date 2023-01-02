@@ -12,7 +12,8 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Live Link: [https://adeleye-frank-lendsqr-fe-test.netlify.app/](Click here)
+Live Link:
+[https://adeleye-frank-lendsqr-fe-test.netlify.app](https://adeleye-frank-lendsqr-fe-test.netlify.app)
 
 ## Project Features
 
