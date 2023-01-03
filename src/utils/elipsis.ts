@@ -10,7 +10,7 @@ function elipsis(text = "", numOfCharacters = 50) {
   }
 
   if (text.length < numOfCharacters) {
-    //now we don't want an elipsis even if there's no need since the text is not as long as the number of characters we want before an elipsis:
+    
     newStr = text;
 
     return newStr;

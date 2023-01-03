@@ -27,7 +27,7 @@ function GetAllUsersFail(payload) {
   };
 }
 
-/* --------------- GET ALL USERS -------------------- */
+/* --------------- GET USER BY ID -------------------- */
 
 function GetUserByIdStart(payload) {
   return {
@@ -50,12 +50,17 @@ function GetUserByIdFail(payload) {
   };
 }
 
+/* --------------- LOGIN USER -------------------- */
+
+
 function LoginUser(payload) {
   return {
     type: LOGIN_USER.SUCCESS,
     payload,
   };
 }
+
+/* --------------- LOGOUT USER -------------------- */
 
 function LogoutUser() {
   return {
