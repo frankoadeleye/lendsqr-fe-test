@@ -71,7 +71,7 @@ function Login() {
   const handleErrorEmail = () => {
     if (fields.email === "") {
       errorFieldsTrue("email");
-      setEmailErrorText("Email be cannot be empty");
+      setEmailErrorText("Email cannot be empty");
       setEmailReady(false);
     } else if (!emailTest().test(fields.email)) {
       errorFieldsTrue("email");
